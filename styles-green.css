@@ -1,0 +1,160 @@
+:root {
+    --primary-color: #4caf50; /* Green */
+    --secondary-color: #388e3c; /* Darker Green */
+    --accent-color: #81c784; /* Light Green */
+    --text-color: #2b2d42; /* Keep text color for readability */
+    --light-color: #f8f9fa; /* Keep light background */
+    --dark-color: #212529; /* Keep dark color */
+    --success-color: #4cc9f0; /* Keep success color */
+    --warning-color: #f72585; /* Keep warning color */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-color);
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+}
+
+.note-form {
+    margin-bottom: 30px;
+}
+
+#note-input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    min-height: 120px;
+    resize: vertical;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+}
+
+#note-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+#add-note, #save-note {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+#add-note:hover, #save-note:hover {
+    background-color: var(--secondary-color);
+}
+
+.notes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.note-item {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.note-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.note-text {
+    margin-bottom: 15px;
+    word-wrap: break-word;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.note-actions {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.edit-note, .delete-note {
+    font-size: 1.5rem; /* Increase size for better visibility */
+    padding: 5px; /* Add padding for better touch targets */
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #adb5bd; /* Default color */
+    transition: color 0.2s ease;
+}
+
+.edit-note:hover {
+    color: var(--accent-color); /* Change color on hover */
+}
+
+.delete-note:hover {
+    color: var(--warning-color); /* Change color on hover */
+}
+
+.offline-status {
+    text-align: center;
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 500;
+    background-color: #e9ecef;
+}
+
+.offline-status.offline {
+    background-color: #ffe3e3;
+    color: var(--warning-color);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+}
